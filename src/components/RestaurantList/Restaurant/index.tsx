@@ -12,11 +12,12 @@ import {
 
 type Props = {
   title: string
-  tag: string[]
+  tag: string
   description: string
-  rating: string
+  rating: number
   img: string
   imgAlt: string
+  id: number
 }
 
 export default function Restaurant({
@@ -25,16 +26,15 @@ export default function Restaurant({
   description,
   rating,
   img,
-  imgAlt
+  imgAlt,
+  id
 }: Props) {
   return (
     <Card>
       <img src={img} alt={imgAlt} />
       <Infos>
         <TagContainer>
-          {tag.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
+          <Tag key={tag}>{tag}</Tag>
         </TagContainer>
         <TitleLine>
           <Title>{title}</Title>
@@ -44,7 +44,7 @@ export default function Restaurant({
           </Rating>
         </TitleLine>
         <p>{description}</p>
-        <Button to="/restaurantes"> Saiba mais</Button>
+        <Button to={`/restaurantes/${id}`}> Saiba mais</Button>
       </Infos>
     </Card>
   )

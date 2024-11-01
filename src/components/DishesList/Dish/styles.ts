@@ -8,6 +8,11 @@ export const Card = styled.div`
   height: 338px;
   padding: 8px;
 
+  img {
+    width: 304px;
+    height: 170px;
+    object-fit: cover;
+  }
   p {
     font-size: 14px;
     font-weight: 400;

@@ -1,25 +1,37 @@
-import RestaurantClass from '../../models/Restaurant'
+import { RestaurantType } from '../../pages/Home'
 import Restaurant from './Restaurant'
 import { Body, List } from './styles'
 
 type Props = {
-  restaurant: RestaurantClass[]
+  restaurants: RestaurantType[]
 }
 
-export default function RestaurantList({ restaurant }: Props) {
+export function formataPreco(preco = 0) {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
+
+export function formatDescription(descr: string, final: number) {
+  return descr.slice(0, final)
+}
+export default function RestaurantList({ restaurants }: Props) {
   return (
     <Body className="container">
       <List>
-        {restaurant.map((rest) => (
-          <Restaurant
-            key={rest.title}
-            description={rest.description}
-            imgAlt={rest.imgAlt}
-            rating={rest.rating}
-            tag={rest.tag}
-            img={rest.image}
-            title={rest.title}
-          />
+        {restaurants.map((rest) => (
+          <li key={rest.titulo}>
+            <Restaurant
+              description={formatDescription(rest.descricao, 290) + '...'}
+              id={rest.id}
+              imgAlt={rest.tipo}
+              rating={rest.avaliacao}
+              tag={rest.tipo}
+              img={rest.capa}
+              title={rest.titulo}
+            />
+          </li>
         ))}
       </List>
     </Body>

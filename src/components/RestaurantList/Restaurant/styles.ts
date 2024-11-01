@@ -18,6 +18,8 @@ export const Card = styled.div`
     margin-bottom: 0;
     display: block;
     width: 472px;
+    height: 217px;
+    object-fit: cover;
   }
   position: relative;
   ${Button} {

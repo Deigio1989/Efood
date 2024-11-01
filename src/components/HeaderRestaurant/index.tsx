@@ -1,12 +1,12 @@
-import RestaurantClass from '../../models/Restaurant'
 import fundo from '../../assets/images/fundo.png'
 import logo from '../../assets/images/logo.png'
 
 import { Link } from 'react-router-dom'
 import { HeaderNav, Imagem, Info, RestaurantHeader, Title } from './styles'
+import { RestaurantType } from '../../pages/Home'
 
 type Props = {
-  restaurant: RestaurantClass
+  restaurant: RestaurantType
 }
 
 export default function HeaderRestaurant({ restaurant }: Props) {
@@ -22,11 +22,11 @@ export default function HeaderRestaurant({ restaurant }: Props) {
         </HeaderNav>
         <img src={logo} alt="logo" />
       </RestaurantHeader>
-      <Imagem style={{ backgroundImage: `url(${restaurant.image})` }}>
+      <Imagem style={{ backgroundImage: `url(${restaurant.capa})` }}>
         <div className="filter">
           <div className="container">
             <Info>Italiana</Info>
-            <Title>{restaurant.title}</Title>
+            <Title>{restaurant.titulo}</Title>
           </div>
         </div>
       </Imagem>
