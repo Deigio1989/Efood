@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
+import { CartButton } from './Dish/styles'
 
 export const DishList = styled.div`
   display: grid;

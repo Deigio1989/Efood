@@ -20,7 +20,9 @@ export default function HeaderRestaurant({ restaurant }: Props) {
 
           <p>0 produtos no carrinho</p>
         </HeaderNav>
-        <img src={logo} alt="logo" />
+        <Link className="link" to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       </RestaurantHeader>
       <Imagem style={{ backgroundImage: `url(${restaurant.capa})` }}>
         <div className="filter">

@@ -6,13 +6,6 @@ type Props = {
   restaurants: RestaurantType[]
 }
 
-export function formataPreco(preco = 0) {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
-}
-
 export function formatDescription(descr: string, final: number) {
   return descr.slice(0, final)
 }
