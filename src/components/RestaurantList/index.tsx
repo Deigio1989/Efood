@@ -23,6 +23,7 @@ export default function RestaurantList({ restaurants }: Props) {
               tag={rest.tipo}
               img={rest.capa}
               title={rest.titulo}
+              destaque={rest.destacado}
             />
           </li>
         ))}

@@ -18,6 +18,7 @@ type Props = {
   img: string
   imgAlt: string
   id: number
+  destaque: boolean
 }
 
 export default function Restaurant({
@@ -27,13 +28,15 @@ export default function Restaurant({
   rating,
   img,
   imgAlt,
-  id
+  id,
+  destaque
 }: Props) {
   return (
     <Card>
       <img src={img} alt={imgAlt} />
       <Infos>
         <TagContainer>
+          {destaque && <Tag key={tag}>Destaque da semana</Tag>}
           <Tag key={tag}>{tag}</Tag>
         </TagContainer>
         <TitleLine>
