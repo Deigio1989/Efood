@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
-import { CartButton } from './Dish/styles'
+import { breakpoints, cores } from '../../styles'
 
 export const DishList = styled.div`
   display: grid;
@@ -9,4 +8,7 @@ export const DishList = styled.div`
   background-color: ${cores.bege};
   padding-top: 64px;
   padding-bottom: 120px;
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `

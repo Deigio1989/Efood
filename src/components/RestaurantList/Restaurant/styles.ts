@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../../styles'
+import { breakpoints, cores } from '../../../styles'
 import { Link } from 'react-router-dom'
 
 export const Button = styled(Link)`
@@ -12,12 +12,14 @@ export const Button = styled(Link)`
 `
 
 export const Card = styled.div`
-  width: 472px;
-  height: 398px;
+  max-width: 472px;
+  max-height: 398px;
+  width: 100%;
+  height: 100%;
   img {
     margin-bottom: 0;
     display: block;
-    width: 472px;
+    width: 100%;
     height: 217px;
     object-fit: cover;
   }
@@ -26,6 +28,10 @@ export const Card = styled.div`
     position: absolute;
     bottom: 8px;
     left: 8px;
+  }
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 600px;
+    margin: 0 auto;
   }
 `
 export const Infos = styled.div`

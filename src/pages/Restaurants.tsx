@@ -1,18 +1,14 @@
 import HeaderRestaurant from '../components/HeaderRestaurant'
 
 import DishesList from '../components/DishesList'
-import { useEffect, useState } from 'react'
-import { RestaurantType } from './Home'
+
 import { useParams } from 'react-router-dom'
+import Cart from '../components/Cart'
+import { useGetRestaurantQuery } from '../services/api'
 
 export default function Restaurants() {
-  const [restaurant, setRestaurants] = useState<RestaurantType>()
   const { id } = useParams()
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurants(res))
-  })
+  const { data: restaurant } = useGetRestaurantQuery(id!)
 
   return (
     <>
@@ -20,6 +16,7 @@ export default function Restaurants() {
         <>
           <HeaderRestaurant restaurant={restaurant} />
           <DishesList restaurant={restaurant} />
+          <Cart />
         </>
       ) : (
         <h1>Carregando...</h1>

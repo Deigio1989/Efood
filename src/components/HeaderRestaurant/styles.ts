@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
@@ -50,4 +49,7 @@ export const Info = styled.p`
   padding-top: 24px;
   font-size: 32px;
   font-weight: 100;
+`
+export const CartLink = styled.a`
+  cursor: pointer;
 `

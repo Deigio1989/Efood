@@ -2,14 +2,29 @@ import fundo from '../../assets/images/fundo.png'
 import logo from '../../assets/images/logo.png'
 
 import { Link } from 'react-router-dom'
-import { HeaderNav, Imagem, Info, RestaurantHeader, Title } from './styles'
+import {
+  CartLink,
+  HeaderNav,
+  Imagem,
+  Info,
+  RestaurantHeader,
+  Title
+} from './styles'
 import { RestaurantType } from '../../pages/Home'
+import { useDispatch, useSelector } from 'react-redux'
+import { open } from '../../store/reducers/Cart'
+import { RootReducer } from '../../store'
 
 type Props = {
   restaurant: RestaurantType
 }
 
 export default function HeaderRestaurant({ restaurant }: Props) {
+  const dispatch = useDispatch()
+  function openCart() {
+    dispatch(open())
+  }
+  const { items } = useSelector((state: RootReducer) => state.cart)
   return (
     <>
       <RestaurantHeader style={{ backgroundImage: `url(${fundo})` }}>
@@ -18,7 +33,9 @@ export default function HeaderRestaurant({ restaurant }: Props) {
             Restaurantes
           </Link>
 
-          <p>0 produtos no carrinho</p>
+          <CartLink onClick={openCart}>
+            {items.length} produto(s) no carrinho
+          </CartLink>
         </HeaderNav>
         <Link className="link" to="/">
           <img src={logo} alt="logo" />
