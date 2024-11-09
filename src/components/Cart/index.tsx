@@ -431,7 +431,7 @@ export default function Cart() {
             </CartButton>
           </>
         ) : (
-          <p>Algo deu errado no seu pedido. Por favor tente novamente.</p>
+          <p>Carregando...</p>
         )}
       </Sidebar>
     </CheckoutContainer>
