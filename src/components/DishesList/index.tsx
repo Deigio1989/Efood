@@ -1,4 +1,3 @@
-import { RestaurantType } from '../../pages/Home'
 import Dish from './Dish'
 import { DishList } from './styles'
 
@@ -8,6 +7,7 @@ type Props = {
 
 export default function DishesList({ restaurant }: Props) {
   const cardapio = restaurant.cardapio
+
   return (
     <>
       <DishList className="container">

@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 import {
   CartLink,
   HeaderNav,
-  Imagem,
+  Image,
   Info,
   RestaurantHeader,
   Title
 } from './styles'
-import { RestaurantType } from '../../pages/Home'
 import { useDispatch, useSelector } from 'react-redux'
 import { open } from '../../store/reducers/Cart'
 import { RootReducer } from '../../store'
@@ -41,14 +40,14 @@ export default function HeaderRestaurant({ restaurant }: Props) {
           <img src={logo} alt="logo" />
         </Link>
       </RestaurantHeader>
-      <Imagem style={{ backgroundImage: `url(${restaurant.capa})` }}>
+      <Image style={{ backgroundImage: `url(${restaurant.capa})` }}>
         <div className="filter">
           <div className="container">
             <Info>Italiana</Info>
             <Title>{restaurant.titulo}</Title>
           </div>
         </div>
-      </Imagem>
+      </Image>
     </>
   )
 }

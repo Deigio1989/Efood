@@ -1,22 +1,9 @@
 import styled from 'styled-components'
-import { cores } from '../../../styles'
+import { CartButton, colors } from '../../../styles'
 
-export const CartButton = styled.button`
-  cursor: pointer;
-  background-color: ${cores.bege2};
-  color: ${cores.rosa};
-  display: block;
-  margin: 0px;
-  border: none;
-  padding: 4px 7px;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
-`
 export const Card = styled.div`
-  background-color: ${cores.rosa};
-  color: ${cores.bege2};
+  background-color: ${colors.pink};
+  color: ${colors.beige2};
   width: 320px;
   height: 338px;
   padding: 8px;
@@ -69,9 +56,9 @@ export const ModalCard = styled.div`
   position: absolute;
   display: flex;
   column-gap: 24px;
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   padding: 32px;
-  color: ${cores.branco};
+  color: ${colors.white};
   z-index: 1;
 
   img {

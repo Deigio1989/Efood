@@ -1,34 +1,10 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
-import { CartButton } from '../DishesList/Dish/styles'
+import { colors } from '../../styles'
+import ReactInputMask from 'react-input-mask'
 
-export const Sidebar = styled.aside`
-  color: ${cores.bege2};
-  background-color: ${cores.rosa};
-  z-index: 1;
-  max-width: 360px;
-  width: 100%;
-  padding: 32px 8px;
-  ${CartButton} {
-    width: 100%;
-    margin-top: 16px;
-  }
-`
-export const CartContainer = styled.div`
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: none;
-  justify-content: flex-end;
-  &.isOpen {
-    display: flex;
-  }
-`
 export const CartItem = styled.li`
-  color: ${cores.rosa};
-  background-color: ${cores.bege2};
+  color: ${colors.pink};
+  background-color: ${colors.beige2};
   position: relative;
   display: flex;
   padding: 8px;
@@ -66,4 +42,46 @@ export const Price = styled.div`
   font-family: Roboto;
   font-size: 14px;
   font-weight: 700;
+`
+export const SplitRow = styled.div`
+  width: 100%;
+  display: flex;
+  flex: auto;
+  column-gap: 34px;
+  .small-input {
+    max-width: 87px;
+  }
+  .number-input {
+    width: 228px;
+  }
+`
+export const Input = styled.input`
+  background-color: ${colors.beige2};
+  border: 1px solid ${colors.beige2};
+  padding: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: ${colors.darkGrey};
+  &.error {
+    border-color: #000;
+  }
+`
+export const MaskInput = styled(ReactInputMask)`
+  background-color: ${colors.beige2};
+  border: 1px solid ${colors.beige2};
+  padding: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: ${colors.darkGrey};
+  &.error {
+    border-color: #000;
+  }
 `

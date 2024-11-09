@@ -37,7 +37,7 @@ export default function Restaurant({
       <Infos>
         <TagContainer>
           {destaque && <Tag key={tag}>Destaque da semana</Tag>}
-          <Tag key={tag}>{tag}</Tag>
+          <Tag key={title}>{tag}</Tag>
         </TagContainer>
         <TitleLine>
           <Title>{title}</Title>

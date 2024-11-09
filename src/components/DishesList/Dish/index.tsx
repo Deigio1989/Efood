@@ -1,11 +1,12 @@
-import { Card, CartButton, Modal, ModalCard, ModalDescription } from './styles'
+import { Card, Modal, ModalCard, ModalDescription } from './styles'
 import close from '../../../assets/images/close_1.png'
 import { useState } from 'react'
-import { Overlay } from '../../../styles'
+import { CartButton, Overlay } from '../../../styles'
 import { formatDescription } from '../../RestaurantList'
 import { useDispatch, useSelector } from 'react-redux'
 import { add, open } from '../../../store/reducers/Cart'
 import { RootReducer } from '../../../store'
+import { parseToBrl } from '../../../utils/enums'
 
 export type DishType = {
   foto: string
@@ -18,13 +19,6 @@ export type DishType = {
 
 export type Props = {
   cardapio: DishType
-}
-
-export function formataPreco(preco = 0) {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
 }
 
 export default function Dish(props: Props) {
@@ -55,7 +49,7 @@ export default function Dish(props: Props) {
         <img src={props.cardapio.foto} alt={props.cardapio.nome} />
         <h3>{props.cardapio.nome}</h3>
         <p>{description}</p>
-        <CartButton onClick={() => setOpenModal(true)}>
+        <CartButton margintop="0" onClick={() => setOpenModal(true)}>
           Adicionar ao carrinho
         </CartButton>
       </Card>
@@ -66,8 +60,8 @@ export default function Dish(props: Props) {
             <h3>{props.cardapio.nome}</h3>
             <p> {description}</p>
             <p>{'Serve de ' + props.cardapio.porcao}</p>
-            <CartButton onClick={addToCart}>
-              Adicionar ao carrinho - {formataPreco(props.cardapio.preco)}
+            <CartButton margintop="16px" onClick={addToCart}>
+              Adicionar ao carrinho - {parseToBrl(props.cardapio.preco)}
             </CartButton>
             <img
               src={close}

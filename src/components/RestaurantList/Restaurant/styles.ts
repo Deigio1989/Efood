@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../../styles'
+import { breakpoints, colors } from '../../../styles'
 import { Link } from 'react-router-dom'
 
 export const Button = styled(Link)`
-  background-color: ${cores.rosa};
-  color: ${cores.bege2};
+  background-color: ${colors.pink};
+  color: ${colors.beige2};
   font-size: 14px;
   padding: 4px 6px;
   text-decoration: none;
@@ -35,11 +35,11 @@ export const Card = styled.div`
   }
 `
 export const Infos = styled.div`
-  border: 1px solid ${cores.rosa};
+  border: 1px solid ${colors.pink};
   border-top: 0;
   height: 180px;
   padding: 8px;
-  background-color: ${cores.branco};
+  background-color: ${colors.white};
   p {
     size: 14px;
     font-weight: 400;
@@ -70,8 +70,8 @@ export const TagContainer = styled.div`
   display: flex;
 `
 export const Tag = styled.div`
-  background-color: ${cores.rosa};
-  color: ${cores.bege2};
+  background-color: ${colors.pink};
+  color: ${colors.beige2};
   font-size: 12px;
   padding: 4px 6px;
   line-height: 14px;

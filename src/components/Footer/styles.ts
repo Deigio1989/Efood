@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const FooterBanner = styled.footer`
-  background-color: ${cores.bege2};
+  background-color: ${colors.beige2};
   text-align: center;
   padding-bottom: 40px;
   div {
@@ -12,7 +12,7 @@ export const FooterBanner = styled.footer`
     font-size: 10px;
     font-weight: 400;
     text-align: center;
-    color: ${cores.rosa};
+    color: ${colors.pink};
     margin-top: 80px;
   }
   .logo {

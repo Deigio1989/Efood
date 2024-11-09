@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const RestaurantHeader = styled.header`
   position: relative;
@@ -21,17 +21,17 @@ export const HeaderNav = styled.nav`
   text-align: center;
   .link {
     text-decoration: none;
-    color: ${cores.rosa};
+    color: ${colors.pink};
   }
 `
 
-export const Imagem = styled.div`
+export const Image = styled.div`
   height: 280px;
   width: 100%;
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${cores.branco};
+  color: ${colors.white};
 
   .filter {
     background-color: rgba(0, 0, 0, 0.5);
