@@ -25,13 +25,13 @@ export default function Cart() {
       address: '',
       city: '',
       zipCode: '',
-      number: '12',
+      number: '',
       complement: '',
       cardName: '',
       cardNumber: '',
-      code: '123',
-      month: '12',
-      year: '1234'
+      code: '',
+      month: '',
+      year: ''
     },
     validationSchema: Yup.object({
       receiver: Yup.string()
@@ -357,7 +357,7 @@ export default function Cart() {
             </div>
           </SplitRow>
           <SplitRow>
-            <div>
+            <div className="medium-input">
               <label htmlFor="expMonth">Mês de vencimento</label>
               <Input
                 id="expMonth"
@@ -372,7 +372,7 @@ export default function Cart() {
               />
               <small>{getErrorMessage('month', form.errors.month)}</small>
             </div>
-            <div>
+            <div className="medium-input">
               <label htmlFor="expYear">Ano de Vencimento</label>
               <MaskInput
                 id="expYear"

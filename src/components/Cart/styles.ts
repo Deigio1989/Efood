@@ -54,6 +54,9 @@ export const SplitRow = styled.div`
   .number-input {
     width: 228px;
   }
+  .medium-input {
+    width: 155px;
+  }
 `
 export const Input = styled.input`
   background-color: ${colors.beige2};
